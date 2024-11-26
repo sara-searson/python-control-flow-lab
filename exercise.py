@@ -57,7 +57,7 @@ def check_letter():
         print(f'The letter {letter} is a consonant')
 
 # Call the function
-# check_letter()
+check_letter()
 
 
 
@@ -90,7 +90,7 @@ def check_voting_eligibility():
         print('Please enter a number')
 
 # Call the function
-# check_voting_eligibility()
+check_voting_eligibility()
 
 
 
@@ -130,7 +130,7 @@ def calculate_dog_years():
 
 
 # Call the function
-# calculate_dog_years()
+calculate_dog_years()
 
 
 
@@ -197,7 +197,15 @@ def determine_season():
     day = input('Please enter the day of the month: ')
     try:
         day = int(day)
-        if month in ['jan', 'feb'] or (month == 'dec' and day >= 21) or (month == 'mar' and day <= 19):
+        if day < 1:
+            print('Please enter a positive day')
+        elif month in ('jan', 'mar', 'may', 'jul', 'aug', 'oct', 'dec') and day > 31:
+            print (f'Please enter a valid day of the month! {month.capitalize()} only has 31 days.')
+        elif month in ('apr', 'jun', 'sep', 'nov') and day > 30:
+            print (f'Please enter a valid day of the month! {month.capitalize()} only has 30 days.')
+        elif month == 'feb' and day > 29:
+            print(f'Please enter a valid day of the month! {month.capitalize()} only has 29 days')
+        elif month in ['jan', 'feb'] or (month == 'dec' and day >= 21) or (month == 'mar' and day <= 19):
             print(f'{month.capitalize()} {day} is winter.')
         elif month in ['apr', 'may'] or (month == 'mar' and day >= 20) or (month == 'jun' and day <= 20):
             print(f'{month.capitalize()} {day} is spring.')
