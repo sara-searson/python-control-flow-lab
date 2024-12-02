@@ -50,11 +50,13 @@ print_heading('Exercise 1: Vowel or Consonant')
 # - Ensure to provide feedback for non-alphabetical or invalid entries.
 
 def check_letter():
-    letter = input('Enter a letter: ').lower()
-    if(letter == 'a' or 'e' or 'i' or 'o' or 'u'):
+    letter = input('Enter a letter: ').lower().isalpha()
+    if(letter == 'a' or letter == 'e' or letter == 'i' or letter == 'o' or letter == 'u'):
         print(f'The letter {letter} is a vowel')
-    else:
+    elif(letter):
         print(f'The letter {letter} is a consonant')
+    else: 
+        print('Please enter a letter.')
 
 # Call the function
 check_letter()
